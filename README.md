@@ -70,3 +70,16 @@ kubectl rollout status deployment.v1.apps/myapp-deployment
 kubectl rollout undo deployment.v1.apps/myapp-deployment
 
 kubectl logs pod/myapp-deployment-5ccf8d8d84-c4b7p
+
+
+**
+gcloud container clusters get-credentials your-first-cluster-1 --zone=us-central1-c
+kubectl apply -f redis-master-deployment.yaml
+kubectl apply -f redis-master-service.yaml
+kubectl apply -f redis-slave-deployment.yaml
+kubectl apply -f redis-slave-service.yaml
+kubectl apply -f frontend-deployment.yaml
+kubectl apply -f frontend-service.yaml
+
+kubectl get pods
+kubectl get services
