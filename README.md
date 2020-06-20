@@ -69,3 +69,4 @@ kubectl rollout status deployment.v1.apps/myapp-deployment
 
 kubectl rollout undo deployment.v1.apps/myapp-deployment
 
+kubectl logs pod/myapp-deployment-5ccf8d8d84-c4b7p
