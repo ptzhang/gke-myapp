@@ -57,3 +57,15 @@ curl http://localhost
 echo $FTP_USER
 yum -y install ftp
 
+
+
+kubectl describe deployment myapp-deployment
+
+kubectl apply -f myapp-service.yaml
+
+kubectl get services
+
+kubectl rollout status deployment.v1.apps/myapp-deployment
+
+kubectl rollout undo deployment.v1.apps/myapp-deployment
+
