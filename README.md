@@ -8,7 +8,6 @@ Saturday, 20 June 2020
 https://github.com/ACloudGuru-Resources/Course_GKE_Beginner_To_Pro
 
 
-
 docker build -t myapp .
 docker images
 docker history myapp
