@@ -95,3 +95,7 @@ docker build -t myapp:probes1 .
 docker tag myapp:probes1 gcr.io/playground-s-11-92c9ad/myapp:probes1
 docker push gcr.io/playground-s-11-92c9ad/myapp:probes1
 
+kubectl get pods
+kubectl patch deployment.v1.apps/myapp-deployment -p '{"spec":{"progressDeadlineSeconds":120}}'
+kubectl rollout status deployment.v1.apps/myapp-deployment
+kubectl describe deployment myapp-deployment
