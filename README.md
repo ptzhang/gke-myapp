@@ -124,3 +124,21 @@ kubectl delete -f mysql-service.yaml
 kubectl delete -f mysql-deployment.yaml
 kubectl delete -f mysql-volumeclaim.yaml
 
+** Deployment patterns blue/red
+gcloud container clusters get-credentials cluster-1 --zone=us-central1-c
+gcloud builds submit --tag gcr.io/playground-s-11-d98568/myapp:v1
+gcloud builds submit --tag gcr.io/playground-s-11-d98568/myapp:v2
+gcloud builds submit --tag gcr.io/playground-s-11-d98568/myapp:v3
+
+kubectl apply -f myapp-blue.yaml
+kubectl apply -f myapp-service.yaml
+
+kubectl apply -f myapp-green.yaml
+kubectl apply -f myapp-service.yaml
+
+kubectl describe service myapp-service
+
+kubectl delete -f myapp-blue.yaml
+kubectl delete -f myapp-green.yaml
+
+while true; do curl http://34.70.131.90/; sleep 0.5; done
