@@ -99,3 +99,28 @@ kubectl get pods
 kubectl patch deployment.v1.apps/myapp-deployment -p '{"spec":{"progressDeadlineSeconds":120}}'
 kubectl rollout status deployment.v1.apps/myapp-deployment
 kubectl describe deployment myapp-deployment
+
+**Volumes and persistent storage
+kubectl apply -f mysql-volumeclaim.yaml
+kubectl apply -f wordpress-volumeclaim.yaml
+kubectl get pvc
+
+kubectl create secret generic mysql --from-literal=password=MYSECRETPASS
+kubectl get secrets
+
+kubectl apply -f mysql-deployment.yaml
+kubectl apply -f mysql-service.yaml
+
+kubectl apply -f wordpress-deployment.yaml
+kubectl apply -f wordpress-service.yaml
+
+kubectl delete pod -l app=mysql
+
+kubectl delete -f wordpress-service.yaml
+kubectl delete -f wordpress-deployment.yaml
+kubectl delete -f wordpress-volumeclaim.yaml
+
+kubectl delete -f mysql-service.yaml
+kubectl delete -f mysql-deployment.yaml
+kubectl delete -f mysql-volumeclaim.yaml
+
