@@ -142,3 +142,8 @@ kubectl delete -f myapp-blue.yaml
 kubectl delete -f myapp-green.yaml
 
 while true; do curl http://34.70.131.90/; sleep 0.5; done
+
+**Autoscaler
+go get -u github.com/rakyll/hey
+
+
