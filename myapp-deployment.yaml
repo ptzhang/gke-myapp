@@ -16,6 +16,34 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: gcr.io/playground-s-11-f8264a/myapp:red
+        image: gcr.io/playground-s-11-92c9ad/myapp:probes2
         ports:
         - containerPort: 8888
+        livenessProbe:
+          httpGet:
+            path: /isalive
+            port: 8888
+          initialDelaySeconds: 3
+          periodSeconds: 3
+        readinessProbe:
+          httpGet:
+            path: /isready
+            port: 8888
+          initialDelaySeconds: 5
+          periodSeconds: 5
+      - name: cloudsql-proxy
+        image: gcr.io/cloudsql-docker/gce-proxy:1.11
+        command: ["/cloud_sql_proxy",
+                  "-instances=playground-s-11-92c9ad:us-central1:mysql=tcp:3306",
+                  "-credential_file=/secrets/cloudsql/credentials.json"]
+        securityContext:
+          runAsUser: 2
+          allowPrivilegeEscalation: false
+        volumeMounts:
+          - name: cloudsql-instance-credentials
+            mountPath: /secrets/cloudsql
+            readOnly: true
+      volumes:
+        - name: cloudsql-instance-credentials
+          secret:
+            secretName: cloudsql-instance-credentials

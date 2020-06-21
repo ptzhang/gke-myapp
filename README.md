@@ -83,3 +83,15 @@ kubectl apply -f frontend-service.yaml
 
 kubectl get pods
 kubectl get services
+
+**Maintaining a service with unhealthy pods
+gcloud iam service-accounts create cloudsqlproxy
+gcloud projects add-iam-policy-binding playground-s-11-92c9ad --member serviceAccount:cloudsqlproxy@playground-s-11-92c9ad.iam.gserviceaccount.com --role roles/cloudsql.client
+gcloud iam service-accounts keys create ./sqlproxy.json --iam-account cloudsqlproxy@playground-s-11-92c9ad.iam.gserviceaccount.com
+kubectl create secret generic cloudsql-instance-credentials --from-file=credentials.json=./sqlproxy.json
+kubectl logs pod/myapp-deployment-857857fd9d-5gc8p -c cloudsql-proxy
+
+docker build -t myapp:probes1 .
+docker tag myapp:probes1 gcr.io/playground-s-11-92c9ad/myapp:probes1
+docker push gcr.io/playground-s-11-92c9ad/myapp:probes1
+
