@@ -147,3 +147,35 @@ while true; do curl http://34.70.131.90/; sleep 0.5; done
 go get -u github.com/rakyll/hey
 
 
+**Helm
+gcloud container clusters get-credentials cluster-1 --zone us-central1-c --project playground-s-11-cebfc0
+kubectl apply -f tiller-serviceaccount.yaml
+//download
+wget https://git.io/get_helm.sh
+//permission
+chmod 700 get_helm.sh
+//run it
+./get_helm.sh
+
+helm init --service-account helm
+kubectl get deploy,svc tiller-deploy -n kube-system
+
+//install a chart
+//https://github.com/helm/charts/tree/master/stable
+
+kubectl get deployments
+kubectl get statefulsets
+kubectl get pv
+helm status kneeling-boxer
+
+helm upgrade --set service.type='LoadBalancer' kneeling-boxer stable/bookstack
+
+helm list
+
+helm delete kneeling-boxer
+
+wget https://raw.githubusercontent.com/helm/charts/master/stable/bookstack/values.yaml
+
+helm install -f values.yaml stable/bookstack --name mybooks
+helm status mybooks
+
