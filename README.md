@@ -197,3 +197,28 @@ kubectl describe ingress blue-ingress
 //hack dns
 curl --resolve myapp.example.com:80:35.226.161.76 http://myapp.example.com
 curl --resolve myapp.example.com:80:35.226.161.76 http://myapp.example.com/blue
+
+**High availability clusters and workloads
+KUBECONFIG=clusters.yaml gcloud container clusters create --zone=us-east4-a cluster-1
+KUBECONFIG=clusters.yaml gcloud container clusters create --zone=europe-west1-c cluster-2
+
+for ctx in $(kubectl config get-contexts -o=name --kubeconfig clusters.yaml); do kubectl --kubeconfig clusters.yaml --context="${ctx}" apply -f manifests/; done
+
+kubectl --kubeconfig=clusters.yaml config get-contexts
+kubectl --kubeconfig=clusters.yaml config current-context
+
+kubectl --kubeconfig=clusters.yaml get deploy,svc
+kubectl --kubeconfig=clusters.yaml --context="gke_playground-s-11-cebfc0_us-east4-a_cluster-1" get deploy,svc
+
+wget https://storage.googleapis.com/kubemci-release/release/latest/bin/linux/amd64/kubemci
+
+//make the binary executable
+chmod +x ./kubemci
+
+//reserve a public IP
+gcloud compute addresses create --global kubemci-ip
+gcloud compute addresses list
+//to create multi cluster ingress 'zone-printer'
+./kubemci create zone-printer --ingress=manifests/ingress.yaml --kubeconfig=clusters.yaml
+./kubemci get-status zone-printer
+

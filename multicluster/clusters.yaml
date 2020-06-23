@@ -1,0 +1,45 @@
+apiVersion: v1
+clusters:
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURDekNDQWZPZ0F3SUJBZ0lRV2x0M3dFRWZVditmL2tJNFpma0xLREFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlReU16WXpaak5sT1MxallXTmxMVFEyWldVdE9ERTRaQzB6TjJNNVkySTNOMk5tTXpndwpIaGNOTWpBd05qSXpNREV6TnpNeFdoY05NalV3TmpJeU1ESXpOek14V2pBdk1TMHdLd1lEVlFRREV5UXlNell6ClpqTmxPUzFqWVdObExUUTJaV1V0T0RFNFpDMHpOMk01WTJJM04yTm1Nemd3Z2dFaU1BMEdDU3FHU0liM0RRRUIKQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUM2QlhsaE92WUlITHlvRWUzZXJEcnVpVlg3OVpQekh3VHBOZC9rekk1TApsK2RnYmp6WlNCWDBmMXBNU2JjVTcyWmo5MTcvZnoxNTgvQ3FKODVIN2dBc3kyZ0dRVTIvM2c1VTJmMDNpZERIClNXMVhyQzNMRnQ2a0pIY3pEZEJHY1RjV1l0dm03TGNjTUk1YW9UMFZUOXpXUXBZd2pJUytPaDU1a1JTYUdtWFgKUGU0bVE5SW4xWnBxQ1ErZm8xbHVxTitYU0RnZU9YUE0xNFBZMXdHVFlTdGcrMEt4MU5QczArTHZRTzVEc2tOVgpoKzVPMDhCMVZRK3IrWXl6NVcrdmJKVS9semtkWnVtVkJYUDkwYzEvaHlKSlhwajQzSjBCYloyY1MzYU9xRzc3CmtWaVRHRnJBYXJsSzF4ZUdTT04vck5LUDcxL0pIN3dNd2h5bmdpOFpyZURoQWdNQkFBR2pJekFoTUE0R0ExVWQKRHdFQi93UUVBd0lDQkRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFCYgpsMy9BWVNJL04rSVE2Rk9UR0djV0lWK2ZoNzB5azdsMnYxTHB5clprSDgxMGVlSGlXUEhNakIxdFVXL2xFTHptCkZzZE5jRkM5VjUrN3BCa1huSHFCbS9kQ3dwSUxVamQzTGJaVnRTbExNSXRTNmNlRUJBM1QvemZsekQranhpcmUKbFJVRkN3V1dXYTZLNFYwa1UrUXZDTVdka1RkeWp5dVlxeUFMcUl3QkFvZ2tSQTl2SHQvdEQ3ZUY4SjcxUXFrTQpGRk1RazJIb1hqdXR6QTlDREUrd0pkU2JUenJTWmIzQjc5NjZFYVJhVXRLMU8zYno2ckZ3dVZ6NDR6RDJraGZyCm55THdXZ3VpL2RIb2RDN1dWYVNINUxkWnllSlhFRDFwbndVQTNUNGxkVmU1ZW5uYzVCVXpUbCtFYlFRZE4zcnMKTkdma2hHREc1RzlsZ3VsOXJKaXoKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://35.195.120.51
+  name: gke_playground-s-11-cebfc0_europe-west1-c_cluster-2
+- cluster:
+    certificate-authority-data: LS0tLS1CRUdJTiBDRVJUSUZJQ0FURS0tLS0tCk1JSURDekNDQWZPZ0F3SUJBZ0lRTGZKMlFxZ2ZCV0FHd1h3QXlmU2xQREFOQmdrcWhraUc5dzBCQVFzRkFEQXYKTVMwd0t3WURWUVFERXlRNFl6VXpPRGRpT0MxbFlqQTRMVFEyTUdRdE9USXdOeTAzWkRrME1qRmpPVE14Wm1RdwpIaGNOTWpBd05qSXpNREV6TVRRM1doY05NalV3TmpJeU1ESXpNVFEzV2pBdk1TMHdLd1lEVlFRREV5UTRZelV6Ck9EZGlPQzFsWWpBNExUUTJNR1F0T1RJd055MDNaRGswTWpGak9UTXhabVF3Z2dFaU1BMEdDU3FHU0liM0RRRUIKQVFVQUE0SUJEd0F3Z2dFS0FvSUJBUUNhOFdLdzhkZnBnNzBwa1FGZFhZTGtVRDF1b1MzNEFWeG1OcjJFSGJwVwpBV3p2d3Y3blhSK3hrcHM2SWYwWG84Z3NqakhWRWc4c1pKUHowYTdMZTZEeTFxdG01cVJiU01XbWR2bEUvY01SClZNaTExdlpQU215N0dwZjFGWjBzT2x6RE50b0pKMm4wYkt0Wk5VODZZc05reEJxMWZrUkEzMTBOU29JbXFubksKK0x6dFFOYi9nSW0xalB4S29UeDhjczZHWjhaTFhXMXYydXh3VC9xV1FtWTJzaXd3VXhUejllU0J4Y05SVm5sUQp2MHQ1Lys0VVRrb3pnN0lBTXliM1NEeFcyS09zOXc2eG1PZzcyRk81bHJIOXdPMnhjdGQ3aGZYWXRGQjJkV1JPClYxb0hYRUhMQVdCVlExOGZacGcrSDIvbEZHM3UvQjJjL3ZHb2xZb1hULzM3QWdNQkFBR2pJekFoTUE0R0ExVWQKRHdFQi93UUVBd0lDQkRBUEJnTlZIUk1CQWY4RUJUQURBUUgvTUEwR0NTcUdTSWIzRFFFQkN3VUFBNElCQVFBMwo4b3F3UlNxeDhNSllPc0ZsazBFMWY4eFVxNzVLdFlWOVp4blhwVTBJOTIxUGM3cmtsS2hISzBOd2pMeWFVd0FnClJYTjZZQVIvVVJzTnUwMThNNmpsb3ZneU01Nmk0VmN2cFFpeDRWVUdlaUNoa1RxQ2QyRUpLY2RxY09qaWJGK00KZm5RTG5PMWNtbi9tWmVabzFTbWordCtnTTFVOVdyb3ZpbGFaSkZoUSs5U3JGWjVpZDJKU25NYUR2Uk5QeTJYNQo5cURacStTSC9QOGJMdGF4ekFTc3ArcUt4VnhvblFOaVlNNXJrUTFaQWh4aVAydFdsZ1dOKzlGakRoVnA1NDgyCnRuTzVOUDZULzBWUy9rSFp4emZ2L2I0V3FIM3ZiQ3dmZmxUNzdtSWY5c2IwZ3pjRnB1b2sxU0tEV2RBYW1CbU0KUGRUS1ZVLzZDS3pqVUNxRkpaSlUKLS0tLS1FTkQgQ0VSVElGSUNBVEUtLS0tLQo=
+    server: https://35.186.162.6
+  name: gke_playground-s-11-cebfc0_us-east4-a_cluster-1
+contexts:
+- context:
+    cluster: gke_playground-s-11-cebfc0_europe-west1-c_cluster-2
+    user: gke_playground-s-11-cebfc0_europe-west1-c_cluster-2
+  name: gke_playground-s-11-cebfc0_europe-west1-c_cluster-2
+- context:
+    cluster: gke_playground-s-11-cebfc0_us-east4-a_cluster-1
+    user: gke_playground-s-11-cebfc0_us-east4-a_cluster-1
+  name: gke_playground-s-11-cebfc0_us-east4-a_cluster-1
+current-context: gke_playground-s-11-cebfc0_europe-west1-c_cluster-2
+kind: Config
+preferences: {}
+users:
+- name: gke_playground-s-11-cebfc0_europe-west1-c_cluster-2
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.a0AfH6SMDLbQHgonTQLWBYDBGzweBe4mAmrsqymegUybgABciKn1_8oUWqAuWfrM0GuqfeUk3KDL2g0ipwF2Go6UUfoWBpw2mXqU-j6pfvk-Q2VQqf4opbrMw1UEjUpoR4LonloAtxusSs2hCqGaxrz56ejEJ5f97wAWhKGQztuK1RjALtqdIT6avr2mX_ioj2QFB2l6vPlPYF5fazm1_mqCpFKm6bdfbuDL5imcHSH8oPy16jKMjlNYuVtwHOM5t6i0f7wNyswJma
+        cmd-args: config config-helper --format=json
+        cmd-path: /usr/lib/google-cloud-sdk/bin/gcloud
+        expiry: 2020-06-23T03:57:04Z
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
+- name: gke_playground-s-11-cebfc0_us-east4-a_cluster-1
+  user:
+    auth-provider:
+      config:
+        access-token: ya29.a0AfH6SMDLbQHgonTQLWBYDBGzweBe4mAmrsqymegUybgABciKn1_8oUWqAuWfrM0GuqfeUk3KDL2g0ipwF2Go6UUfoWBpw2mXqU-j6pfvk-Q2VQqf4opbrMw1UEjUpoR4LonloAtxusSs2hCqGaxrz56ejEJ5f97wAWhKGQztuK1RjALtqdIT6avr2mX_ioj2QFB2l6vPlPYF5fazm1_mqCpFKm6bdfbuDL5imcHSH8oPy16jKMjlNYuVtwHOM5t6i0f7wNyswJma
+        cmd-args: config config-helper --format=json
+        cmd-path: /usr/lib/google-cloud-sdk/bin/gcloud
+        expiry: 2020-06-23T03:48:12Z
+        expiry-key: '{.credential.token_expiry}'
+        token-key: '{.credential.access_token}'
+      name: gcp
