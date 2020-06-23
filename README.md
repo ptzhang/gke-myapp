@@ -179,3 +179,21 @@ wget https://raw.githubusercontent.com/helm/charts/master/stable/bookstack/value
 helm install -f values.yaml stable/bookstack --name mybooks
 helm status mybooks
 
+**helm nginx-ingress
+helm install --name nginx-ingress stable/nginx-ingress
+
+docker tag myapp:blue gcr.io/playground-s-11-cebfc0/myapp:blue
+gcloud builds submit --tag gcr.io/playground-s-11-cebfc0/myapp:blue
+gcloud builds submit --tag gcr.io/playground-s-11-cebfc0/myapp:green
+kubectl apply -f myapp-blue.yaml
+kubectl apply -f myapp-green.yaml
+kubectl apply -f myapp-service.yaml
+
+kubectl apply -f ingress-blue.yaml
+kubectl apply -f ingress-green.yaml
+kubectl get ingress
+kubectl describe ingress blue-ingress
+
+//hack dns
+curl --resolve myapp.example.com:80:35.226.161.76 http://myapp.example.com
+curl --resolve myapp.example.com:80:35.226.161.76 http://myapp.example.com/blue

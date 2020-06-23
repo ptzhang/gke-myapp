@@ -18,6 +18,6 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: gcr.io/playground-s-11-d98568/myapp:v3
+        image: gcr.io/playground-s-11-cebfc0/myapp:blue
         ports:
         - containerPort: 8888
