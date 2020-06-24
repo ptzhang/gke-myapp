@@ -222,3 +222,25 @@ gcloud compute addresses list
 ./kubemci create zone-printer --ingress=manifests/ingress.yaml --kubeconfig=clusters.yaml
 ./kubemci get-status zone-printer
 
+**Running a Stateful Cassandra Database
+kubectl apply -f ssd-class.yaml
+kubectl apply -f cassandra-service.yaml
+
+kubectl get services  
+kubectl get storageclasses
+
+kubectl api-resources
+kubectl get sc
+kubectl get sc,svc
+
+kubectl apply -f cassandra-statefulset.yaml
+kubectl exec -it cassandra-0 -- nodetool status
+
+kubectl run dig --image=tutum/dnsutils --restart=Never --rm=true --tty --stdin --command -- dig cassandra.default.svc.cluster.local
+
+kubectl get pods -o wide
+kubectl cordon gke-cluster-1-default-pool-12a68d95-f2gl
+kubectl delete pod cassandra-1
+
+
+
